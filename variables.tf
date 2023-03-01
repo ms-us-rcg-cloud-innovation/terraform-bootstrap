@@ -9,4 +9,9 @@ variable "location" {
 variable "name" {
   description = "the common name used in all resources"
   type        = string
+
+  validation {
+    condition     = can(regex("^[a-z0-9]+$", var.name))
+    error_message = "Name can only consist of lowercase and numeric values"
+  }
 }
