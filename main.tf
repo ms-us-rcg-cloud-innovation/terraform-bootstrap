@@ -18,7 +18,7 @@ data "azurerm_client_config" "current" {}
 
 # the resource gropu that contains all triage state
 resource "azurerm_resource_group" "tfstate" {
-  name     = var.resource_group_name
+  name     = var.resource_group_name == null || var.resource_group_name == "" ? "rg-${var.name}-tfstate" : var.resource_group_name
   location = var.location
 }
 

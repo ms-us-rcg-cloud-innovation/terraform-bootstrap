@@ -16,7 +16,7 @@ variable "name" {
 }
 
 variable "resource_group_name" {
-  description = "The name of the resource group"
+  description = "The name of the resource group. Will default to 'rg-{var.name}-tfstate'."
   type        = string
-  default     = "rg-${var.name}-tfstate"
+  nullable    = true
 }
