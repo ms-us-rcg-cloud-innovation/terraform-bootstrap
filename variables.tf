@@ -19,4 +19,5 @@ variable "resource_group_name" {
   description = "The name of the resource group. Will default to 'rg-{var.name}-tfstate'."
   type        = string
   nullable    = true
+  default     = null
 }
